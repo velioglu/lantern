@@ -99,4 +99,7 @@ jobs:
         with:
           name: lantern-extras-lcov.info
           path: ./lantern-extras-lcov.info
+
+      - name: sudo cat cacheproxy log
+        run: sudo cat /var/log/cacheproxy.log
   
