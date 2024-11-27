@@ -68,6 +68,12 @@ jobs:
           PG_VERSION: ${{ matrix.postgres }}
       - name: sudo cat cacheproxy log
         run: sudo cat /var/log/cacheproxy.log
+      - name: cat runner admin log
+        run: sudo cat /home/runneradmin/cacheproxy.log
+        continue-on-error: true
+      - name: cat runner log
+        run: sudo cat /home/runner/cacheproxy.log
+        continue-on-error: true
       - name: Run postgres
         run: RUN_POSTGRES=1 ./ci/scripts/build-extras.sh
         env:
